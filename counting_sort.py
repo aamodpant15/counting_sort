@@ -2,13 +2,12 @@
 Counting Sort algorithm based on the CLRS Pg. 195
 
 where,
-    a -> word to sort
-    k -> number of characters that appear in a
+    a -> list to sort
+    k -> number of characters in the language of the word.
 """
-# (str, int) -> str
+# (list, int) -> list
 def counting_sort(a, k):
     c = [0] * (k) #k
-    a = list(a) #n
     b = [0] * (len(a)) #n
 
     for j in range (0, len(a)): #n
@@ -22,4 +21,4 @@ def counting_sort(a, k):
     for j in range(len(a)-1, -1, -1): # n - 1
         b[c[ord(a[j])-97]-1] = a[j]
         c[ord(a[j])-97] -= 1
-    return ''.join(b)
+    return b
